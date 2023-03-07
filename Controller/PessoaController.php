@@ -1,5 +1,5 @@
 <?php
-
+//preenche a model e redireciona as rotas
 //processa cada requisição do usuário
 
 class PessoaController {
@@ -27,6 +27,8 @@ class PessoaController {
         $model = new PessoaModel();
 
         if(isset($_GET['id']))
+
+            //estou pegando através do GET uma variável que está vindo tipo texto e estou convertendo ela para INT.
             $model = $model->getById((int)$_GET['id']);
 
         include "View/Modules/Pessoa/FormPessoa.php";
@@ -52,7 +54,11 @@ class PessoaController {
     public static function delete() {
         include 'Model/PessoaModel.php';
         $model = new PessoaModel();
+
+        //vai receber uma string e transformar p número
         $model->delete((int) $_GET['id']);
+
+        //redirecionar
         header("Location: /pessoa");
     }
 

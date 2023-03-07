@@ -26,6 +26,7 @@
                     <td><?= $item->nome ?></td>
                     <td><?= $item->email ?></td>
                     <td>
+                        <!-- acessando a rota /pessoa/form e recuperar o id -->
                         <form action="/pessoa/form?id=<?=$item->id?>" method="POST">
                             <input type="submit" value="Update">
                         </form>
@@ -36,6 +37,7 @@
                 </tr>
             <?php endforeach ?>
             
+            <!-- se a contagem da model rows for igual a zero, retorne que não tem registro -->
             <?php if (count($model->rows)==0) : ?>
                 <tr>
                     <td colspan="4">Nenhum registo encontrado</td>

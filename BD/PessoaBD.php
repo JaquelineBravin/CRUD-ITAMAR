@@ -61,6 +61,7 @@ class PessoaBD {
     }
 
     public function delete(int $id) {
+        
         $sql = "DELETE FROM pessoa WHERE id = :id";
 
         $bd = $this->conexao->prepare($sql);

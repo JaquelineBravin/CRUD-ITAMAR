@@ -6,3 +6,9 @@ C - Controller - atua processando todas as requisições
 
 MVC é um padrão de projeto. 
 - Este padrão nos permite paralelizar o trabalho, ou seja , um programador trabalhando em cada camada.
+
+
+PESQUISAR
+
+Diferença metodo post e get
+O que é função static
