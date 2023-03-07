@@ -1,0 +1,8 @@
+--- PADRÃO MVC ---
+
+M - Model - primeira camada
+V - View - interface gráfica
+C - Controller - atua processando todas as requisições
+
+MVC é um padrão de projeto. 
+- Este padrão nos permite paralelizar o trabalho, ou seja , um programador trabalhando em cada camada.
