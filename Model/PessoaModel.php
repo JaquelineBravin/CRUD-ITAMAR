@@ -1,5 +1,6 @@
 <?php
 
+//Busca informações no banco de dados
 class PessoaModel {
     public $id, $nome, $email;
 
@@ -13,6 +14,7 @@ class PessoaModel {
         $bd = new PessoaBD();
 
         //vai pegar todos os dados preenchidos da pessoaBD atraves do $this e jogar pro insert ou update
+        //se id tiver vazia, faz o insert, senão faz o update
         if(empty($this->id)) {
             $bd->insert($this);
         } else {
@@ -27,16 +29,19 @@ class PessoaModel {
         //conectei com o BD
         $bd = new PessoaBD();
 
-        //peguei todas as linhas com o select() e guardei elas na variavel $rows
+        //peguei todas as linhas vindas do banco com o select() e guardei elas na variavel $rows
         $this->rows = $bd->select();
     }
 
+    //função para buscar alguém pelo ID
     public function getById(int $id) {
         include 'BD/PessoaBD.php';
         $bd = new PessoaBD();
 
+        //se ele encontrou algum id, ele vai retornar o obj
         $obj = $bd->selectById($id);
-
+        //se xiste, retorna, caso contrario, cria nova pessoamodel
+        //se $obj for diferente de falso, retorne $obj, caso contrário, retorne new pessoaModel
         return ($obj) ? $obj : new PessoaModel();
     }
 
