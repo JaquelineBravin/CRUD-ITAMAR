@@ -1,7 +1,7 @@
 <?php 
 //aqui fica todo o acesso com o banco de dados
 
-//cada vez que eu criaar um pbjeto do tipo PessoaBD, vou estar chamando o metodo contrutor
+//cada vez que eu criaar um objeto do tipo PessoaBD, vou estar chamando o metodo contrutor
 class PessoaBD {
     //armazena o link de conexão com o Banco de dados
     private $conexao;
@@ -23,10 +23,11 @@ class PessoaBD {
     public function insert(PessoaModel $model) {
 
         //a string mysql vai ser processada pelo metodo prepare
-        //os values vou substituir com valores
+        //os marcadores vou substituir com valores
         $sql = $this->conexao->prepare("INSERT INTO pessoa (nome, email) VALUES (:n, :e)");
 
         //nome e email vou pegar o que eu preenchi la no formulario
+        //os bindValue são responsáveis por receber um valor e trocar em uma determinada posição
         $sql->bindValue(":n", $model->nome);
         $sql->bindValue(":e", $model->email);
 
@@ -47,17 +48,19 @@ class PessoaBD {
         $sql->execute();
 
         //vai retornar todas as linhas
-        //para retornar como rray de objetos, só usar o metodo do PDO::FETCH_CLASS
-        return $sql->fetchAll(PDO::FETCH_CLASS);
+        //para retornar como array de objetos, só usar o metodo do PDO::FETCH_CLASS
+        //Os objetos foram criados automaticamente pelo método fetchAll do PDO.
+        return $sql->fetchAll(PDO::FETCH_CLASS); // fetchAll Retorna um array com todas as linhas da consulta, ideal para uma busca por nome ou por endereço.
     }
 
+    // Retorna um registro específico da tabela pessoa do banco de dados. Note que o método exige um parâmetro $id do tipo inteiro.
     public function selectById(int $id) {
         include_once 'Model/PessoaModel.php';
         $sql = $this->conexao->prepare("SELECT * FROM pessoa WHERE id = :i");
 
         $sql->bindValue(":i", $id);
         $sql->execute();
-        return $sql->fetchObject("PessoaModel");
+        return $sql->fetchObject("PessoaModel"); // Retornando um objeto específico PessoaModel
     }
 
     public function delete(int $id) {

@@ -6,7 +6,7 @@ class PessoaController {
 
     //cada método/função processa uma rota, devolve algo
     //public:
-    //static:
+    //static: que o método da classe pode ser acessado  fora sem ter que criar uma nova classe  
 
     //a index() vai devolver a listagem
     public static function index() {
@@ -45,7 +45,7 @@ class PessoaController {
         $model->nome = $_POST['nome'];
         $model->email = $_POST['email'];
 
-        $model->save();
+        $model->save(); //chamando o método save da model.
 
         //redirecionar a localização para /pessoa
         header("Location: /pessoa");
@@ -55,7 +55,7 @@ class PessoaController {
         include 'Model/PessoaModel.php';
         $model = new PessoaModel();
 
-        //vai receber uma string e transformar p número
+        // Enviando a variável $_GET como inteiro para o método delete
         $model->delete((int) $_GET['id']);
 
         //redirecionar
