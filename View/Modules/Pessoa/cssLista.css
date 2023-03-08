@@ -3,7 +3,7 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-background: #0000006b;
+background: #000000af;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -14,7 +14,7 @@ padding: 20px;
 
 a {
     background-color: rgba(0, 0, 0, 0.692);
-    color: #fff;
+    color: #ffffffd7;
     text-decoration: none;
     padding: 10px 15px;
     font-size: 12px;
@@ -24,18 +24,19 @@ a {
 }
 
 input {
-    background-color: rgba(5, 70, 25, 0.356);
-    color: #fff;
+    background-color: rgba(4, 27, 11, 0.705);
+    color: #ffffffbb;
     text-decoration: none;
     padding: 5px 7px;
     font-size: 10px;
     cursor: pointer;
     margin: 1px;
     border-radius: 5px;
+    border: none;
 }
 
 body {
     background-image: linear-gradient(to right, rgb(61, 161, 100), rgb(3, 43, 3));
-    color: #fff;
+    color: #ffffffd8;
     font-family: Arial, Helvetica, sans-serif;
 }
