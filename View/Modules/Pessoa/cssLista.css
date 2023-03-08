@@ -24,7 +24,7 @@ a {
 }
 
 input {
-    background-color: rgba(4, 27, 11, 0.705);
+    background-color: rgba(0, 0, 0, 0.692);
     color: #ffffffbb;
     text-decoration: none;
     padding: 5px 7px;
@@ -36,7 +36,7 @@ input {
 }
 
 body {
-    background-image: linear-gradient(to right, rgb(61, 161, 100), rgb(3, 43, 3));
+    background-image: linear-gradient(to right, rgb(0,0,0), rgb(100,100,100));
     color: #ffffffd8;
     font-family: Arial, Helvetica, sans-serif;
 }
