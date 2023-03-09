@@ -47,8 +47,8 @@
 <body>
     <div>
         <h2>O que deseja?</h2>
-        <button onclick="window.location.href = '/pessoa'">Cadastrar pessoa</button>
-        <a href='/pessoa/form'><button>Formulário de pessoas</button></a>
+        <button onclick="window.location.href = '/pessoa/form'">Cadastrar pessoa</button>
+        <a href='/pessoa'><button>Formulário de pessoas</button></a>
     </div>
 </body>
 </html>

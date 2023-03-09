@@ -12,6 +12,7 @@ class PessoaBD {
     //então toda vez que a classe for chamada, já faço conexão com o banco de dados
     public function __construct()
     {
+        //data source name, descreve a conexão com o banco
         $dsn = "mysql:host=localhost;dbname=cruditamar";
         //conexao é uma variavel local do construtor
         //a conexão é aberta via PDO, que é um recurso da linguagem para diversos SGBD
@@ -24,6 +25,7 @@ class PessoaBD {
 
         //a string mysql vai ser processada pelo metodo prepare
         //os marcadores vou substituir com valores
+        //trocar os marcadores pelos nomes deles 
         $sql = $this->conexao->prepare("INSERT INTO pessoa (nome, email) VALUES (:n, :e)");
 
         //nome e email vou pegar o que eu preenchi la no formulario
@@ -43,6 +45,7 @@ class PessoaBD {
         $sql->execute(); 
     }
 
+    //ajudar select() para selectAll()
     public function select() {
         $sql = $this->conexao->prepare("SELECT * FROM pessoa");
         $sql->execute();
